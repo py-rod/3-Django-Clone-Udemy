@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "CircularStdBold", sans-serif;
+    src: url("../fonts/CircularStd-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "CircularStdBook";
+    src: url("../fonts/CircularStd-Book.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "CircularStdMedium";
+    src: url("../fonts/CircularStd-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "CircularStdBlack";
+    src: url("../fonts/CircularStd-Black.ttf") format("truetype");
+}
+
+
+
+:root {
+    --font-circular-bold: "CircularStdBold", sans-serif;
+    --font-circular-book: "CircularStdBook", sans-serif;
+    --font-circular-black: "CircularStdBlack", sans-serif;
+    --font-circular-medium: "CircularStdMedium", sans-serif;
+    --color1: #722FF9;
+    --color1-hover: #672be0;
+    --color2: #374151;
+    --color3: #111827;
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-circular-book);
+}
+
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex: 1;
+}
