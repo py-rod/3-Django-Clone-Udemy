@@ -66,6 +66,13 @@
     background-color: var(--color3);
 }
 
+.name-profile {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 115px;
+}
+
 
 @media (min-width:1400px) {
     .header-nav {

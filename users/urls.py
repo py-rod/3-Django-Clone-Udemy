@@ -3,5 +3,8 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.users, name="users")
+    path("signup/", views.signup, name="signup"),
+    path("logout", views.close_session, name="logout"),
+    # ACTIVATE ACCOUNT
+    path("activate/<uidb64>/<token>", views.activate, name="activate"),
 ]
