@@ -3,8 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    path("signup/", views.signup, name="signup"),
-    path("logout", views.close_session, name="logout"),
+    path("users/signup/", views.signup, name="signup"),
+    path("users/signin/", views.signin, name="signin"),
+    path("users/logout", views.close_session, name="logout"),
     # ACTIVATE ACCOUNT
-    path("activate/<uidb64>/<token>", views.activate, name="activate"),
+    path("users/activate/<uidb64>/<token>", views.activate, name="activate"),
+    path("social/signup/", views.redirect_signin_with_google, name="signup_redirect")
 ]

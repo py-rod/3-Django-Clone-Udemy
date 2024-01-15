@@ -1,0 +1,63 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.main-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/background_4.png");
+
+}
+
+.section-signin {
+    width: 100%;
+    max-width: 600px;
+    user-select: none;
+    background-color: white;
+}
+
+
+.line-accounts {
+    text-align: center;
+    margin-top: 25px;
+    position: relative;
+    color: gray;
+}
+
+.line-accounts::before {
+    content: "";
+    background-color: rgb(233, 233, 233);
+    width: 45%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    margin: auto 0;
+}
+
+.line-accounts::after {
+    content: "";
+    background-color: rgb(233, 233, 233);
+    width: 45%;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    margin: auto 0;
+}
+
+
+
+.signin-google,
+.signin-github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

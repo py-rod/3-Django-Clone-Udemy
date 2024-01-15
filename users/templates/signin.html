@@ -1,0 +1,68 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/signin.css' %}" type="text/css">
+{% endblock %}
+{% block title %}EduHub | Sign in{% endblock %}
+<!-- FOR SOCIAL ACCOUNT LOGIN -->
+{% load socialaccount %}
+
+
+{% block content %}
+{% include 'layouts/header.html' %}
+{% include 'layouts/messages.html' %}
+<main class="main-signin">
+    <section class="section-signin border rounded p-10 shadow-lg">
+        <h1 class="text-center text-3xl font-bold">Login to your EduHub account</h1>
+        <form action="{% url 'signin' %}" method="POST" class="form-signin mt-8">
+            {% csrf_token %}
+            <div class="relative">
+                <input type="email" id="is_username" name="username" required autofocus autocomplete="email"
+                    maxlength="254"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                    placeholder=" " />
+                <label for="id_username" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+            dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                    Email
+                </label>
+            </div>
+
+            <div class="relative mt-4">
+                <input type="password" id="id_password" name="password" required maxlength="254"
+                    class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                    placeholder=" " />
+                <label for="floating_outlined"
+                    class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9] peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                    Password
+                </label>
+            </div>
+
+            <button type="submit"
+                class=" bg-[#722FF9] py-3 w-1/2 rounded-[2px] text-white text-[18px] m-auto mt-5 block">
+                Log in
+            </button>
+        </form>
+
+        <p class="line-accounts">or</p>
+        <div class="flex align-middle justify-between container-accounts-social  py-7">
+
+            <a href="{% provider_login_url 'google'%}?next=/" class="signin-google p-5 shadow-md rounded">
+                <img src="{% static 'icons/icon_google.svg' %}" alt="Google icon">
+                Continue with Google
+            </a>
+
+
+
+            <a href="{% provider_login_url 'github'%}?nex=/" class="signin-github px-4 py-3 shadow-md rounded">
+                <img src="{% static 'icons/icon_github.svg' %}" alt="Github icon">
+                Continue with Github
+            </a>
+        </div>
+    </section>
+</main>
+{% endblock %}

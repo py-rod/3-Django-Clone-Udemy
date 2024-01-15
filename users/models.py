@@ -36,7 +36,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return None
 
     username = models.CharField(
-        max_length=200, default="", blank=False, unique=False)
+        max_length=200, default="", blank=False, unique=True)
     email = models.EmailField(blank=False, unique=True)
     first_name = models.CharField(max_length=150, default="", blank=False)
     last_name = models.CharField(max_length=150, default="", blank=False)
@@ -50,7 +50,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         "Send me emails", default=False)
 
     is_teach = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)

@@ -1,7 +1,7 @@
 from typing import Any
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class RegisterUserForm(UserCreationForm):
@@ -20,3 +20,14 @@ class RegisterUserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class AuthenticationForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs) -> None:
+        super(AuthenticationForm, self).__init__(*args, **kwargs)
+
+    username = forms.CharField(widget=forms.EmailInput(
+        attrs={"type": "email", "autocomplete": "email", "autofocus": True}
+    ))
+
+    password = forms.PasswordInput()
