@@ -48,17 +48,22 @@
             </button>
         </form>
 
-        <p class="line-accounts">or</p>
-        <div class="flex align-middle justify-between container-accounts-social  py-7">
+        <a href="#" class="mt-8 block text-center text-sm hover:text-[#722FF9]">Forgot password?</a>
+        <p class="mt-2 text-sm text-center">
+            Don't have an account? <a href="{% url 'signup' %}" class="text-[#722FF9]">Sign up</a>
+        </p>
 
-            <a href="{% provider_login_url 'google'%}?next=/" class="signin-google p-5 shadow-md rounded">
+        <p class="line-accounts">or</p>
+        <div class="flex align-middle justify-between container-accounts-social  py-5">
+
+            <a href="{% provider_login_url 'google'%}?next=/" class="signin-google text-sm px-4 py-3 shadow-md rounded">
                 <img src="{% static 'icons/icon_google.svg' %}" alt="Google icon">
                 Continue with Google
             </a>
 
 
 
-            <a href="{% provider_login_url 'github'%}?nex=/" class="signin-github px-4 py-3 shadow-md rounded">
+            <a href="{% provider_login_url 'github'%}?nex=/" class="signin-github text-sm px-4 py-3 shadow-md rounded">
                 <img src="{% static 'icons/icon_github.svg' %}" alt="Github icon">
                 Continue with Github
             </a>
