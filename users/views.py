@@ -58,7 +58,7 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, "Activate link is invalid")
 
-    return redirect("home")
+    return redirect("signin")
 
 
 @user_not_authenticated

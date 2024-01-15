@@ -17,7 +17,7 @@
         <form action="{% url 'signin' %}" method="POST" class="form-signin mt-8">
             {% csrf_token %}
             <div class="relative">
-                <input type="email" id="is_username" name="username" required autofocus autocomplete="email"
+                <input type="email" id="id_username" name="username" required autofocus autocomplete="email"
                     maxlength="254"
                     class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
                     placeholder=" " />
@@ -43,7 +43,7 @@
             </div>
 
             <button type="submit"
-                class=" bg-[#722FF9] py-3 w-1/2 rounded-[2px] text-white text-[18px] m-auto mt-5 block">
+                class="bg-[#722FF9] py-3 w-1/2 rounded-[2px] text-white text-[18px] m-auto mt-5 block">
                 Log in
             </button>
         </form>

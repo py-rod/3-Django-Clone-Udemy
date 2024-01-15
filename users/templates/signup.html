@@ -1,17 +1,125 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" type="text/css">
 {% endblock %}
 {% block title %}EduHub | Sign up{% endblock %}
 
 {% block content %}
 {% include 'layouts/header.html'%}
-<main>
-    <form action="{% url 'signup' %}" method="POST">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Register</button>
-    </form>
-    <a href="{% url 'signin' %}">Go signin</a>
+{% include 'layouts/messages.html'%}
+
+<main class="main-signup">
+    <section class="section-signup border rounded p-10 shadow-lg">
+        <h1 class="text-center text-3xl font-bold">Sign up and start learning</h1>
+        <form action="{% url 'signup' %}" method="POST" class="mt-8">
+            {% csrf_token %}
+            <div class="container-input-names">
+                <div class="relative">
+                    <input type="text" id="id_first_name" name="first_name" required autofocus maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_first_name" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        First name
+                    </label>
+                </div>
+
+                <div class="relative">
+                    <input type="text" id="id_last_name" name="last_name" required maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_username" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        Last name
+                    </label>
+                </div>
+            </div>
+
+            <div class="container-username-email mt-4">
+                <div class="relative">
+                    <input type="text" id="id_username" name="username" required maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_username" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        Username
+                    </label>
+                </div>
+
+                <div class="relative">
+                    <input type="email" id="id_email" name="email" required autocomplete="email" maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_email" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        Email
+                    </label>
+                </div>
+            </div>
+
+            <div class="container-passwords mt-4">
+                <div class="relative">
+                    <input type="password" id="id_password1" name="password1" required autocomplete="new-password"
+                        maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_password1" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        Password
+                    </label>
+                </div>
+
+                <div class="relative">
+                    <input type="password" id="id_password2" name="password2" required autocomplete="new-password"
+                        maxlength="254"
+                        class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-[#722FF9] focus:outline-none focus:ring-0 focus:border-[#722FF9] peer"
+                        placeholder=" " />
+                    <label for="id_password2" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300
+                    transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white
+                dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-[#722FF9]
+                    peer-focus:dark:text-[#722FF9] peer-placeholder-shown:scale-100
+                    peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2
+                    peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                        Password confirmation
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit"
+                class="button-register bg-[#722FF9] py-3 w-1/2 rounded-[2px] text-white text-[18px] m-auto mt-5 block">Register</button>
+        </form>
+
+        <p class="text-center mt-7">Already have an account? <a href="{% url 'signin' %}"
+                class="text-[#722FF9]">Signin</a>
+        </p>
+
+    </section>
 </main>
 {% endblock %}
