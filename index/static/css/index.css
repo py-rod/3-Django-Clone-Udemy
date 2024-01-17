@@ -1,0 +1,67 @@
+@import url(https://unpkg.com/css-peeps@1/css-peeps.compat.css);
+
+.image-peep {
+    --peep-hat-color: #f00fbb;
+    --peep-hair-color: #996cc6;
+    --peep-skin-color: #fbe2d5;
+
+    --peep-facial-hair-color: #ffd700;
+    --peep-object-color: #ffa500;
+    --peep-clothes-color: #ffffff;
+
+    --peep-flipped: 1;
+
+    display: inline-block;
+    width: 425px;
+    height: 376px;
+    background-color: inherit;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+
+.section-1 {
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("../images/Animated_Shape2.svg");
+    background-repeat: no-repeat;
+    user-select: none;
+}
+
+
+.container-text-page {
+    background-color: white;
+    max-width: 500px;
+}
+
+.container-text-page>div>h1 {
+    font-family: var(--font-circular-medium);
+}
+
+
+/* SECTION 2 */
+.section-2 {
+    padding: 50px 20px;
+    margin: 0 auto;
+    margin-top: 150px;
+    background-color: #f7f9fa;
+}
+
+.section-2-text {
+    text-align: center;
+    color: #6a6f73;
+}
+
+.section-2>div {
+    margin: 0 auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+}
+
+.images-logos {
+    margin: 0 auto;
+    width: 100px;
+}

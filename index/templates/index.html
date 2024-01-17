@@ -1,10 +1,38 @@
 {% extends 'layouts/base.html' %}
-
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css">
+{% endblock %}
 
 {% block content %}
 {% include 'layouts/header.html' %}
 {% include 'layouts/messages.html' %}
 <main>
+    <section class="section-1">
+        <div class="container-text-page p-7">
+            <div>
+                {% for text in texts_section1 %}
+                <h1 class=" font-bold text-5xl">{{text.title}}</h1>
+                <p class="text-pretty mt-3 text-[1.2rem]">{{text.description}}</p>
+                {% endfor %}
+            </div>
 
+        </div>
+        <a href="https://css-peeps.com/" data-css-peeps="pomp cheeky glasses1 goatee1 explaining" target="_blank"
+            class="image-peep"></a>
+    </section>
+
+    <section class="section-2">
+        <h2 class="section-2-text text-xl text-balance">
+            Trusted by over 15,000 companies and millions of learners around
+            the
+            world
+        </h2>
+        <div>
+            {% for logo in logos %}
+            <img src="{{logo.brand_logo.image.url}}" alt="{{logo.brand_logo.title}}" class="images-logos">
+            {% endfor %}
+        </div>
+    </section>
 </main>
 {% endblock %}
