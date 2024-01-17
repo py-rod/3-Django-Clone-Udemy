@@ -47,6 +47,8 @@ DEFAULT_APPS = [
 PROJECTS_APPS = [
     'index',
     'users',
+    'categories',
+    'subcategories',
 ]
 
 THRID_PARTY_APPS = [
