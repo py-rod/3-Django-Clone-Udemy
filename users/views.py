@@ -52,6 +52,7 @@ def activate(request, uidb64, token):
     except (TypeError, ValueError, OverflowError, get_user_model().DoesNotExist):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
+        user.is_social_account_active = False
         user.is_active = True
         user.save()
         messages.success(request, "Your account has been activate")

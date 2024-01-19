@@ -35,22 +35,31 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
             return os.path.join("Profile_pick", self.email, instance)
         return None
 
+    first_name = models.CharField(max_length=150, default="", blank=False)
+    last_name = models.CharField(max_length=150, default="", blank=False)
+
     username = models.CharField(
         max_length=200, default="", blank=False, unique=True)
     email = models.EmailField(blank=False, unique=True)
-    first_name = models.CharField(max_length=150, default="", blank=False)
-    last_name = models.CharField(max_length=150, default="", blank=False)
-    departament = models.CharField(blank=True, max_length=100)
-    city = models.CharField(blank=True, max_length=100)
-    country = models.CharField(blank=True, max_length=100)
-    description = models.CharField(max_length=500, default="", blank=True)
     image = models.ImageField(
         default="./default/default_profile.webp", upload_to=image_upload_to)
+
+    instructor_title = models.CharField(max_length=200, default="", blank=True)
+    biografy = models.TextField(max_length=600, default="", blank=True)
+    country = models.CharField(blank=True, max_length=100)
+    language = models.CharField(max_length=200, default="", blank=True)
+    web_site_link = models.CharField(max_length=400, default="", blank=True)
+    twitter_link = models.CharField(max_length=400, default="", blank=True)
+    facebook_link = models.CharField(max_length=400, default="", blank=True)
+    linkin_link = models.CharField(max_length=400, default="", blank=True)
+    youtube_link = models.CharField(max_length=400, default="", blank=True)
+    paypal_account = models.CharField(max_length=400, default="", blank=True)
     send_emails = models.BooleanField(
         "Send me emails", default=False)
 
-    is_teach = models.BooleanField(default=False)
+    is_social_account_active = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
+    is_teach = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)

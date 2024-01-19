@@ -84,7 +84,7 @@
             <a href="{% url 'home' %}" class="header-logo">Edu<span>Hub</span></a>
 
             <!-- CONTAINER DROPDOWN CATEGORIES DESK -->
-            <div class="container-categories">
+            <div class="container-categories relative">
                 <button id="multiLevelDropdownButton" data-dropdown-toggle="multi-dropdown"
                     class="text-slate-700 hover:text-[#722FF9]  font-medium rounded-lg text-sm  text-center inline-flex items-center"
                     type="button">Categories<svg class="w-2.5 h-2.5 ms-3" aria-hidden="false"
@@ -95,55 +95,40 @@
                 </button>
 
                 <!-- Dropdown menu -->
-                <div id="multi-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                <div id="multi-dropdown"
+                    class="z-10 hidden categories-subcategories bg-white divide-y divide-gray-100  shadow w-44">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                         aria-labelledby="multiLevelDropdownButton">
+                        {% for category, subcategories in subcategories.items %}
                         <li>
-                            <a href="#"
-                                class="block px-4 py-2 hover:text-[#722FF9] hover:bg-[#fcfaff] dark:hover:bg-red-400 dark:hover:text-white">Dashboard</a>
-                        </li>
-                        <li>
-                            <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
-                                data-dropdown-placement="right-start" type="button"
-                                class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg
-                                    class="w-2.5 h-2.5 ms-3 rtl:rotate-180" aria-hidden="true"
+                            <button id="doubleDropdownButton{{category.title}}"
+                                data-dropdown-toggle="doubleDropdown{{category.title}}"
+                                data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:text-[#722FF9]
+                                 hover:bg-[#fcfaff] dark:hover:bg-gray-600 dark:hover:text-white">
+                                {{category.title}}
+                                <svg class="w-2.5 h-2.5 ms-3 rtl:rotate-180" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="2" d="m1 9 4-4-4-4" />
-                                </svg></button>
-                            <div id="doubleDropdown"
-                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                </svg>
+                            </button>
+                            <div id="doubleDropdown{{category.title}}"
+                                class="z-10 hidden bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="doubleDropdownButton">
+                                    {% for subcategory in subcategories %}
                                     <li>
                                         <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Overview</a>
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{subcategory.title}}</a>
                                     </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My
-                                            downloads</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Billing</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Rewards</a>
-                                    </li>
+                                    {% endfor %}
+
                                 </ul>
                             </div>
                         </li>
-                        <li>
-                            <a href="#"
-                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                                out</a>
-                        </li>
+                        {% endfor %}
+
+
                     </ul>
                 </div>
             </div>

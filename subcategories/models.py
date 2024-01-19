@@ -14,7 +14,7 @@ class Subcategories(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "Sub_Categories"
+        verbose_name_plural = "Sub Categories"
         db_table = "Sub_Categories"
 
     def __str__(self):

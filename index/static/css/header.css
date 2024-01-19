@@ -73,6 +73,12 @@
     max-width: 115px;
 }
 
+.categories-subcategories {
+    margin: 0 !important;
+    margin-top: 14.3px !important;
+}
+
+
 
 @media (min-width:1400px) {
     .header-nav {
