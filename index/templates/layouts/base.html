@@ -12,6 +12,7 @@
         <!-- DEFAULT STYLES -->
         <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
         <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+        <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
         {% block head %}
         {% endblock %}
@@ -23,7 +24,8 @@
         {% endblock %}
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-
+        <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+        <script src="{% static 'js/video_player.js' %}"></script>
     </body>
 
 </html>

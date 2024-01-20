@@ -65,3 +65,10 @@
     margin: 0 auto;
     width: 100px;
 }
+
+
+
+/* VIDEO PLAYER  */
+.plyr {
+    --plyr-color-main: #722FF9;
+}

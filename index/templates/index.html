@@ -40,19 +40,14 @@
 
 
 
+            {% for video in videos %}
+            <video src="{{video.video.url}}" controls="controls" type="video/mp4" preload="auto" class="plyr"
+                id="player">
+            </video>
 
+            {% endfor %}
 
         </div>
     </section>
 </main>
 {% endblock %}
-
-
-<!-- {% for category, subcategories in subcategories.items %}
-<h2>{{ category.title }}</h2>
-<ul>
-    {% for subcategory in subcategories %}
-    <li>{{ subcategory.title }}</li>
-    {% endfor %}
-</ul>
-{% endfor %} -->
