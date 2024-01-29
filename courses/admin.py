@@ -1,11 +1,12 @@
 from typing import Any
 from django.contrib import admin
-from .models import Course
+from .models import Course, SectionCourse, VideoCourse
 # Register your models here.
 
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title", )}
     list_display = ("id", "title", "author")
     list_display_links = ("id", "title", "author")
     search_fields = ("id", "title", "author")
@@ -16,3 +17,7 @@ class CourseAdmin(admin.ModelAdmin):
         if not obj.author:
             obj.author = get_user
         super().save_model(request, obj, form, change)
+
+
+admin.site.register(SectionCourse)
+admin.site.register(VideoCourse)

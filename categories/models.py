@@ -7,6 +7,7 @@ import os
 
 class Categories(models.Model):
     title = models.CharField(max_length=200, unique=True, blank=False)
+    slug = models.SlugField(default="", unique=True, blank=False)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
 

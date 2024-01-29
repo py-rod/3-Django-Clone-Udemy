@@ -22,9 +22,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('tinymce/', include('tinymce.urls')),
 
     path("", include("index.urls")),
     path("", include("users.urls")),
+    path("", include("subcategories.urls")),
+    path("", include("courses.urls")),
     path("", include('allauth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

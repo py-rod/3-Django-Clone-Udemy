@@ -96,7 +96,7 @@
 
                 <!-- Dropdown menu -->
                 <div id="multi-dropdown"
-                    class="z-10 hidden categories-subcategories bg-white divide-y divide-gray-100  shadow w-44">
+                    class="z-10 hidden categories-subcategories bg-white divide-y divide-gray-100  shadow w-52">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                         aria-labelledby="multiLevelDropdownButton">
                         {% for category, subcategories in subcategories.items %}
@@ -113,13 +113,13 @@
                                 </svg>
                             </button>
                             <div id="doubleDropdown{{category.title}}"
-                                class="z-10 hidden bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700">
+                                class="z-10 hidden bg-white divide-y divide-gray-100 shadow w-52 dark:bg-gray-700">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="doubleDropdownButton">
                                     {% for subcategory in subcategories %}
                                     <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{subcategory.title}}</a>
+                                        <a href="{{subcategory.get_subcategory_url}}"
+                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{subcategory.title}}</a>   
                                     </li>
                                     {% endfor %}
 

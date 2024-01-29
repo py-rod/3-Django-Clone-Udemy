@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        {% load static tailwind_tags %}
-        {% load static %}
-        {% tailwind_css %}
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{% static 'icons/logo-small.png' %}" type="image/x-icon">
+<head>
+    {% load static tailwind_tags %}
+    {% load static %}
+    {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'icons/logo-small.png' %}" type="image/x-icon">
 
-        <!-- DEFAULT STYLES -->
-        <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
-        <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/898374468d.js" crossorigin="anonymous"></script>
 
-        {% block head %}
-        {% endblock %}
-        <title>{% block title %}EduHub | Plataforma de aprendizaje profesional{% endblock %}</title>
-    </head>
+    <!-- DEFAULT STYLES -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
-    <body>
-        {% block content %}
-        {% endblock %}
+    {% block head %}
+    {% endblock %}
+    <title>{% block title %}EduHub | Plataforma de aprendizaje profesional{% endblock %}</title>
+</head>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-        <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-        <script src="{% static 'js/video_player.js' %}"></script>
-    </body>
+<body>
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="{% static 'js/video_player.js' %}"></script>
+</body>
 
 </html>

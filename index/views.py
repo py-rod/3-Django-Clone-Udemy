@@ -11,5 +11,4 @@ def index(request):
     return render(request, "index.html", {
         "texts_section1": content_section1,
         "logos": logos,
-        "videos": videos
     })
